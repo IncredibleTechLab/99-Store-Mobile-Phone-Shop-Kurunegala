@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>99 Store - Mobile Phone Shop Kurunegala</title>
+  <meta name="description" content="99 Store Kurunegala - Brand new phones, used iPhones, Android phones, laptops, accessories, repairs and mobile phone deals." />
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:#050816;color:white;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+
+    .navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 8%;background:rgba(5,8,22,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:900;
+  font-size:26px;
+}
+
+.brand-logo{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  object-fit:cover;
+  background:white;
+  border:2px solid white;
+}
+    .brand span{color:#00e5ff}
+    .nav-links{display:flex;gap:22px;font-size:14px;color:#cbd5e1}
+    .nav-links a:hover{color:#00e5ff}
+    .nav-btn{padding:12px 18px;background:linear-gradient(135deg,#00e5ff,#7c3aed);border-radius:50px;font-weight:bold;box-shadow:0 0 25px rgba(0,229,255,.35)}
+
+    .hero{min-height:100vh;padding:140px 8% 80px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:50px;background:radial-gradient(circle at top left,rgba(0,229,255,.25),transparent 35%),radial-gradient(circle at bottom right,rgba(124,58,237,.25),transparent 35%),#050816}
+    .badge{display:inline-block;padding:10px 18px;background:rgba(0,229,255,.12);color:#67e8f9;border:1px solid rgba(103,232,249,.25);border-radius:50px;margin-bottom:20px;font-weight:bold}
+    .hero h1{font-size:clamp(42px,7vw,82px);line-height:1;margin-bottom:22px}.hero h1 span{background:linear-gradient(135deg,#00e5ff,#a78bfa);-webkit-background-clip:text;color:transparent}
+    .hero p{color:#cbd5e1;font-size:18px;line-height:1.7;max-width:650px;margin-bottom:32px}
+    .hero-buttons{display:flex;gap:15px;flex-wrap:wrap}.btn-primary,.btn-secondary{padding:15px 24px;border-radius:14px;font-weight:bold;transition:.3s}.btn-primary{background:linear-gradient(135deg,#00e5ff,#7c3aed);box-shadow:0 0 30px rgba(0,229,255,.3)}.btn-secondary{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06)}.btn-primary:hover,.btn-secondary:hover{transform:translateY(-4px)}
+    .phone-card{position:relative;padding:30px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:35px;box-shadow:0 30px 80px rgba(0,0,0,.45);animation:float 5s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+    .phone-display{height:520px;border-radius:35px;background:linear-gradient(160deg,rgba(0,229,255,.3),rgba(124,58,237,.45)),url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80') center/cover;border:10px solid #0f172a;position:relative;overflow:hidden}.phone-display:after{content:'99 STORE';position:absolute;bottom:30px;left:30px;font-size:34px;font-weight:900}.phone-display:before{content:'iPhone • Android • Accessories';position:absolute;top:30px;left:30px;background:rgba(0,0,0,.45);padding:10px 14px;border-radius:30px;color:#fff;font-weight:bold}
+
+    section{padding:90px 8%}.section-title{text-align:center;max-width:780px;margin:0 auto 55px}.section-title h2{font-size:clamp(32px,5vw,54px);margin-bottom:15px}.section-title p{color:#94a3b8;line-height:1.7;font-size:17px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:-50px;position:relative;z-index:5}.stat-card,.service-card,.product-card,.review-card,.contact-card,.feature-card,.video-card,.gallery-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:28px;box-shadow:0 20px 50px rgba(0,0,0,.25);transition:.3s}.stat-card:hover,.service-card:hover,.product-card:hover,.review-card:hover,.feature-card:hover,.gallery-card:hover{transform:translateY(-8px);border-color:rgba(0,229,255,.45)}.stat-card h3{font-size:38px;color:#00e5ff;margin-bottom:8px}.stat-card p{color:#cbd5e1}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.service-card .icon,.feature-card .icon{font-size:42px;margin-bottom:20px}.service-card h3,.feature-card h3{font-size:23px;margin-bottom:12px}.service-card p,.feature-card p{color:#94a3b8;line-height:1.7}
+
+    .products,.gallery-section{background:#070b1f}.product-card{overflow:hidden;padding:0}.product-img{height:230px;background-size:cover;background-position:center;position:relative}.tag{position:absolute;top:15px;left:15px;background:#00e5ff;color:#020617;padding:7px 12px;border-radius:50px;font-size:13px;font-weight:bold}.product-body{padding:24px}.product-body h3{margin-bottom:10px;font-size:22px}.product-body p{color:#94a3b8;line-height:1.6;margin-bottom:18px}.price{font-size:24px;color:#22c55e;font-weight:900;margin-bottom:18px}.mini-btn{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(135deg,#00e5ff,#7c3aed);font-weight:bold}
+
+    .video-card{padding:18px}.video-box{height:430px;border-radius:22px;background:linear-gradient(135deg,rgba(0,229,255,.2),rgba(124,58,237,.2)),#0f172a;border:1px dashed rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;text-align:center;color:#cbd5e1;line-height:1.7;overflow:hidden}.video-box video{width:100%;height:100%;object-fit:cover}.video-note{margin-top:18px;color:#94a3b8;line-height:1.7;text-align:center}
+
+    .gallery-card{padding:0;overflow:hidden}.gallery-img{height:245px;background-size:cover;background-position:center}.gallery-card h3{padding:18px 18px 6px}.gallery-card p{padding:0 18px 20px;color:#94a3b8;line-height:1.6}
+    .reviews{background:radial-gradient(circle at center,rgba(0,229,255,.08),transparent 40%),#050816}.stars{color:#facc15;font-size:20px;margin-bottom:14px}.review-card p{color:#cbd5e1;line-height:1.7;margin-bottom:16px}.review-card h4{color:#67e8f9}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.contact-card h3{font-size:28px;margin-bottom:20px}.contact-item{margin-bottom:18px;color:#cbd5e1;line-height:1.7}form{display:grid;gap:15px}input,textarea,select{width:100%;padding:15px;border-radius:14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:white;outline:none}option{color:black}textarea{height:120px;resize:none}.map-box{height:330px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.1);margin-top:25px;background:#111827}.map-box iframe{width:100%;height:100%;border:0;filter:grayscale(20%) invert(90%)}
+    footer{background:#020617;padding:35px 8%;text-align:center;color:#94a3b8;border-top:1px solid rgba(255,255,255,.08)}
+    .whatsapp{position:fixed;right:22px;bottom:22px;width:62px;height:62px;border-radius:50%;background:#22c55e;display:flex;align-items:center;justify-content:center;font-size:30px;z-index:999;box-shadow:0 0 30px rgba(34,197,94,.55)}
+
+    .chatbot-toggle{position:fixed;right:22px;bottom:95px;width:70px;height:70px;border-radius:50%;border:none;background:linear-gradient(135deg,#00e5ff,#7c3aed);color:white;font-size:34px;cursor:pointer;z-index:1000;box-shadow:0 0 30px rgba(0,229,255,.55);animation:botPulse 1.7s infinite}.chatbot-toggle img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid white}@keyframes botPulse{0%{transform:scale(1)}50%{transform:scale(1.08) rotate(4deg)}100%{transform:scale(1)}}
+    .chatbot-box{position:fixed;right:22px;bottom:180px;width:360px;max-width:calc(100vw - 35px);background:rgba(5,8,22,.98);border:1px solid rgba(255,255,255,.15);border-radius:24px;overflow:hidden;z-index:1000;box-shadow:0 25px 70px rgba(0,0,0,.55);display:none}.chatbot-header{padding:16px;background:linear-gradient(135deg,#00e5ff,#7c3aed);display:flex;justify-content:space-between;align-items:center;gap:12px}.chatbot-title{display:flex;align-items:center;gap:10px}.bot-logo{width:45px;height:45px;border-radius:50%;object-fit:cover;background:white;border:2px solid white}.chatbot-header small{display:block;font-size:12px;opacity:.9;margin-top:3px}.chatbot-header button{background:rgba(255,255,255,.2);border:none;color:white;font-size:22px;width:34px;height:34px;border-radius:50%;cursor:pointer}.chatbot-messages{padding:15px;height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}.bot-msg,.user-msg{padding:11px 13px;border-radius:15px;line-height:1.5;font-size:14px}.bot-msg{background:rgba(255,255,255,.08);color:#e2e8f0;align-self:flex-start}.user-msg{background:rgba(0,229,255,.22);color:white;align-self:flex-end}.quick-replies{padding:0 15px 12px;display:flex;flex-wrap:wrap;gap:8px}.quick-replies button{padding:8px 10px;border-radius:50px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);color:white;cursor:pointer;font-size:12px}.chatbot-input{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(255,255,255,.1)}.chatbot-input input{flex:1;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.08);color:white;outline:none}.chatbot-input button{padding:12px 14px;border:none;border-radius:12px;background:linear-gradient(135deg,#00e5ff,#7c3aed);color:white;font-weight:bold;cursor:pointer}
+
+    @media(max-width:950px){.hero,.contact-grid{grid-template-columns:1fr}.stats,.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}.phone-display{height:420px}}
+    @media(max-width:600px){.stats,.grid-3,.grid-4{grid-template-columns:1fr}.navbar{padding:12px 5%}section,.hero{padding-left:5%;padding-right:5%}.nav-btn{display:none}.brand{font-size:20px}.brand-logo{width:44px;height:44px}.chatbot-box{right:10px;bottom:165px;width:calc(100vw - 20px)}}
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand">
+  <img class="brand-logo" src="./logo.png" alt="99 Store Logo">
+  <span>99 Store</span>
+</div>
+    <div class="nav-links"><a href="#home">Home</a><a href="#services">Services</a><a href="#products">Products</a><a href="#gallery">Shop Photos</a><a href="#video">Video</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+    <a class="nav-btn" href="tel:0771221233">Call Now</a>
+  </nav>
+
+  <header class="hero" id="home">
+    <div>
+      <div class="badge">Kurunegala Mobile Phone Shop</div>
+      <h1>Buy Your Dream <span>Phone</span> With Confidence</h1>
+      <p>99 Store offers brand new and carefully selected used phones, iPhones, Android phones, laptops, accessories, mobile exchanges, repairs and delivery service in Kurunegala.</p>
+      <div class="hero-buttons"><a class="btn-primary" href="https://wa.me/94771221233?text=Hello%2099%20Store,%20I%20want%20to%20ask%20about%20phones" target="_blank">WhatsApp Now</a><a class="btn-secondary" href="#products">View Products</a><a class="btn-secondary" href="#video">Watch Video</a></div>
+    </div>
+    <div class="phone-card"><div class="phone-display"></div></div>
+  </header>
+
+  <section class="stats">
+    <div class="stat-card"><h3>4.7★</h3><p>Google Rating</p></div><div class="stat-card"><h3>97+</h3><p>Customer Reviews</p></div><div class="stat-card"><h3>iOS</h3><p>iPhone Deals</p></div><div class="stat-card"><h3>Android</h3><p>Samsung & More</p></div>
+  </section>
+
+  <section id="services">
+    <div class="section-title"><h2>What We Offer</h2><p>Everything a customer expects from a serious mobile phone business: iPhones, Android phones, accessories, laptops, support, exchange and service.</p></div>
+    <div class="grid-3">
+      <div class="service-card"><div class="icon">📱</div><h3>Brand New Phones</h3><p>Latest smartphones and flagship devices with quality assurance and customer support.</p></div>
+      <div class="service-card"><div class="icon">🍎</div><h3>Used iPhones</h3><p>Carefully selected used iPhones including iPhone 12, 13, 14 and 15 series models.</p></div>
+      <div class="service-card"><div class="icon">🤖</div><h3>Android Phones</h3><p>Samsung, Redmi, Vivo, Oppo and other Android phones depending on current stock.</p></div>
+      <div class="service-card"><div class="icon">💻</div><h3>Laptops & MacBooks</h3><p>MacBooks, laptops and tech devices for students, office users and business customers.</p></div>
+      <div class="service-card"><div class="icon">🎧</div><h3>Accessories</h3><p>Chargers, AirPods, speakers, covers, tempered glass and essential mobile accessories.</p></div>
+      <div class="service-card"><div class="icon">🔁</div><h3>Mobile Exchange</h3><p>Upgrade your old phone and get a better deal on your next mobile device.</p></div>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="section-title"><h2>Featured Products</h2><p>Replace the images and prices later with the shop’s real stock. The layout is ready to show customers.</p></div>
+    <div class="grid-3">
+      <div class="product-card"><div class="product-img" style="background-image:url('https://www.engadget.com/engadget/iphone-17-pro-and-pro-max-review-an-impactful-redesign-120002202/43bb5470-935c-11f0-97d5-91bafecad9e6.jpg')"><span class="tag">Hot Deal</span></div><div class="product-body"><h3>iPhone 17 Pro max</h3><p>Premium condition iPhone with strong performance and modern camera system.</p><div class="price">Ask Price</div><a class="mini-btn" href="https://wa.me/94771221233?text=I%20want%20iPhone%2015%20Pro" target="_blank">Ask on WhatsApp</a></div></div>
+      <div class="product-card"><div class="product-img" style="background-image:url('https://www.recell.com.bd/_next/image?url=https%3A%2F%2Fadminapi.recell.com.bd%2Fstorage%2Fmedia%2Flarge%2Fffff1-8790.jpg&w=640&q=75')"><span class="tag">Used</span></div><div class="product-body"><h3>iPhone 12 Pro</h3><p>Carefully used iPhone option for customers who want quality at a better price.</p><div class="price">Ask Price</div><a class="mini-btn" href="https://wa.me/94771221233?text=I%20want%20iPhone%2012%20Pro" target="_blank">Ask on WhatsApp</a></div></div>
+      <div class="product-card"><div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=900&q=80')"><span class="tag">Android</span></div><div class="product-body"><h3>Samsung Galaxy Phones</h3><p>Android phones including Samsung Galaxy models depending on stock availability.</p><div class="price">Ask Price</div><a class="mini-btn" href="https://wa.me/94771221233?text=I%20want%20Samsung%20or%20Android%20phone" target="_blank">Ask on WhatsApp</a></div></div>
+      <div class="product-card"><div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=900&q=80')"><span class="tag">Budget</span></div><div class="product-body"><h3>Budget Android Phones</h3><p>Affordable Android smartphones for daily use, students and business users.</p><div class="price">Best Price</div><a class="mini-btn" href="https://wa.me/94771221233?text=I%20want%20budget%20Android%20phone" target="_blank">Ask on WhatsApp</a></div></div>
+      <div class="product-card"><div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80')"><span class="tag">Laptop</span></div><div class="product-body"><h3>MacBooks & Laptops</h3><p>Useful laptops and MacBooks for work, education and business needs.</p><div class="price">Ask Price</div><a class="mini-btn" href="https://wa.me/94771221233?text=I%20want%20laptop%20or%20MacBook" target="_blank">Ask on WhatsApp</a></div></div>
+      <div class="product-card"><div class="product-img" style="background-image:url('https://m-cdn.phonearena.com/images/article/145593-wide-two_1200/Apples-premium-AirPods-3-havent-been-this-affordable-in-a-minute.jpg')"><span class="tag">Accessories</span></div><div class="product-body"><h3>AirPods, Chargers & Covers</h3><p>Mobile accessories including AirPods, chargers, speakers, covers and tempered glass.</p><div class="price">Best Price</div><a class="mini-btn" href="https://wa.me/94771221233?text=I%20want%20mobile%20accessories" target="_blank">Ask on WhatsApp</a></div></div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="gallery">
+    <div class="section-title"><h2>Shop Photos</h2><p>Add real shop photos here. This section helps customers trust the business before visiting.</p></div>
+    <div class="grid-4">
+      <div class="gallery-card"><div class="gallery-img" style="background-image:url('shop1.jpg')"></div><h3>Shop Front</h3><p>Replace with your real outside shop photo.</p></div>
+      <div class="gallery-card"><div class="gallery-img" style="background-image:url('shop2.jpg')"></div><h3>Product Display</h3><p>Show phones, accessories and counters.</p></div>
+      <div class="gallery-card"><div class="gallery-img" style="background-image:url('shop3.jpg')"></div><h3>Accessories Area</h3><p>Show chargers, covers, speakers and AirPods.</p></div>
+      <div class="gallery-card"><div class="gallery-img" style="background-image:url('shop4.png')"></div><h3>Customer Service</h3><p>Show staff helping customers.</p></div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="section-title"><h2>Business Promo Video</h2><p>Add your edited promo video here so customers can watch the shop, products and offers.</p></div>
+    <div class="video-card">
+      <div class="video-box">
+        <video controls poster="videoposter.jpg">
+          <source src="promovideo.mp4" type="video/mp4">
+        </video>
+        </div>
+      <p class="video-note">Use a 30–60 second video showing the shop, iPhones, Android phones, accessories, offers, customer service and WhatsApp contact.</p>
+    </div>
+  </section>
+
+  <section><div class="section-title"><h2>Why Customers Choose Us</h2><p>A local shop website must build trust fast. These are the selling points customers care about most.</p></div><div class="grid-3"><div class="feature-card"><div class="icon">✅</div><h3>Trusted Devices</h3><p>Phones are checked before selling to reduce customer risk and build confidence.</p></div><div class="feature-card"><div class="icon">💰</div><h3>Best Price Deals</h3><p>Competitive pricing for phones, accessories and exchange deals in Kurunegala.</p></div><div class="feature-card"><div class="icon">🛒</div><h3>Pickup & Delivery</h3><p>Customers can visit the shop, pick up orders.</p></div></div></section>
+
+  <section class="reviews" id="reviews"><div class="section-title"><h2>Customer Reviews</h2><p>Real business websites need proof. Reviews help convert visitors into buyers.</p></div><div class="grid-3"><div class="review-card"><div class="stars">★★★★★</div><p>“Best place to buy used iPhones. Got a used iPhone 12 Pro for best price, in brand new condition.”</p><h4>Customer Review</h4></div><div class="review-card"><div class="stars">★★★★★</div><p>“Best mobile phone shop in Kurunegala. Great customer service and good phone deals.”</p><h4>Customer Review</h4></div><div class="review-card"><div class="stars">★★★★★</div><p>“Great service, high quality phones and products. Highly recommended.”</p><h4>Customer Review</h4></div></div></section>
+
+  <section id="contact"><div class="section-title"><h2>Contact 99 Store</h2><p>Call, WhatsApp or visit the shop directly in Kurunegala.</p></div><div class="contact-grid"><div class="contact-card"><h3>Shop Details</h3><div class="contact-item"><strong>Address:</strong><br>32 Puttalam Rd, Kurunegala</div><div class="contact-item"><strong>Phone / WhatsApp:</strong><br>077 122 1233</div><div class="contact-item"><strong>Products:</strong><br>iPhones, Android phones, laptops, accessories, chargers, speakers, AirPods and more.</div><div class="contact-item"><strong>Services:</strong><br>In-store shopping, in-store pickup, delivery and on-site services.</div><a class="btn-primary" href="https://wa.me/94771221233?text=Hello%2099%20Store" target="_blank">Message on WhatsApp</a><div class="map-box"><iframe src="https://www.google.com/maps?q=32%20Puttalam%20Rd,%20Kurunegala&output=embed" loading="lazy"></iframe></div></div><div class="contact-card"><h3>Quick Inquiry</h3><form onsubmit="sendWhatsApp();return false;"><input type="text" id="name" placeholder="Your Name" required><input type="tel" id="phone" placeholder="Your Phone Number" required><select id="interest" required><option value="">Select Interest</option><option>Brand New Phone</option><option>Used iPhone</option><option>Android Phone</option><option>Laptop / MacBook</option><option>Accessories</option><option>Mobile Exchange</option><option>Other</option></select><textarea id="message" placeholder="Tell us what you need"></textarea><button class="btn-primary" type="submit" style="border:none;cursor:pointer">Send Inquiry</button></form></div></div></section>
+
+  <footer><p>© 2026 99 Store Kurunegala. All Rights Reserved.</p><p>To use real media: add logo.png, bot-logo.png, shop1.jpg, shop2.jpg, shop3.jpg, shop4.jpg, promo-video.mp4 and video-poster.jpg in the same folder.</p></footer>
+  <a class="whatsapp" href="https://wa.me/94771221233?text=Hello%2099%20Store" target="_blank">💬</a>
+
+  <div class="chatbot-box" id="chatbotBox"><div class="chatbot-header"><div class="chatbot-title"><img class="bot-logo" src="bot-logo.png" alt="99 Store Bot" onerror="this.style.display='none'"><div><strong>99 Store AI Assistant</strong><small>Online 24/7</small></div></div><button onclick="toggleChatbot()">×</button></div><div class="chatbot-messages" id="chatbotMessages"><div class="bot-msg">Hello! 👋 I am the 99 Store assistant. Ask me about iPhones, Android phones, accessories, price, location or WhatsApp.</div></div><div class="quick-replies"><button onclick="botReply('iphone')">iPhones</button><button onclick="botReply('android')">Android</button><button onclick="botReply('accessories')">Accessories</button><button onclick="botReply('laptop')">Laptops</button><button onclick="botReply('location')">Location</button><button onclick="botReply('price')">Prices</button><button onclick="botReply('video')">Video</button><button onclick="botReply('whatsapp')">WhatsApp</button></div><div class="chatbot-input"><input id="chatInput" type="text" placeholder="Type your question..." onkeydown="if(event.key==='Enter')sendChatMessage()"><button onclick="sendChatMessage()">Send</button></div></div>
+  <button class="chatbot-toggle" onclick="toggleChatbot()"><span>🤖</span></button>
+
+  <script>
+    function sendWhatsApp(){const name=document.getElementById('name').value;const phone=document.getElementById('phone').value;const interest=document.getElementById('interest').value;const message=document.getElementById('message').value;const text=`Hello 99 Store,%0A%0AName: ${name}%0APhone: ${phone}%0AInterest: ${interest}%0AMessage: ${message}`;window.open(`https://wa.me/94771221233?text=${text}`,'_blank')}
+    function toggleChatbot(){const box=document.getElementById('chatbotBox');box.style.display=box.style.display==='block'?'none':'block'}
+    function addMessage(text,type){const messages=document.getElementById('chatbotMessages');const div=document.createElement('div');div.className=type==='user'?'user-msg':'bot-msg';div.innerHTML=text;messages.appendChild(div);messages.scrollTop=messages.scrollHeight}
+    function botReply(topic){let reply='';if(topic==='iphone')reply='🍎 We sell carefully selected used iPhones including iPhone 12, 13, 14 and 15 series depending on stock. Message WhatsApp for today’s models.';else if(topic==='android')reply='🤖 Yes, we also have Android phones including Samsung, Redmi, Vivo, Oppo and other models depending on current stock.';else if(topic==='accessories')reply='🎧 We sell chargers, AirPods, covers, tempered glass, speakers and other mobile accessories.';else if(topic==='laptop')reply='💻 We have laptops and MacBooks depending on availability. Contact us to check current stock.';else if(topic==='location')reply='📍 99 Store is located at 32 Puttalam Rd, Kurunegala. You can use the Google Map in the contact section.';else if(topic==='price')reply='💰 Prices depend on model, storage, condition and stock. For the latest price, contact us on WhatsApp: <a style="color:#67e8f9;font-weight:bold" href="https://wa.me/94771221233" target="_blank">Chat Now</a>';else if(topic==='video')reply='🎥 You can watch our business promo video in the video section. If it is not showing, the owner needs to upload promo-video.mp4.';else if(topic==='whatsapp')reply='💬 Click here to contact us directly: <a style="color:#67e8f9;font-weight:bold" href="https://wa.me/94771221233?text=Hello%2099%20Store,%20I%20need%20help" target="_blank">Message 99 Store</a>';else reply='Thanks for your message. For exact stock, price and offers, please contact us on WhatsApp: <a style="color:#67e8f9;font-weight:bold" href="https://wa.me/94771221233" target="_blank">Chat Now</a>';setTimeout(()=>addMessage(reply,'bot'),350)}
+    function sendChatMessage(){const input=document.getElementById('chatInput');const msg=input.value.trim();if(!msg)return;addMessage(msg,'user');input.value='';const text=msg.toLowerCase();if(text.includes('iphone')||text.includes('apple'))botReply('iphone');else if(text.includes('android')||text.includes('samsung')||text.includes('redmi')||text.includes('oppo')||text.includes('vivo'))botReply('android');else if(text.includes('laptop')||text.includes('macbook'))botReply('laptop');else if(text.includes('price')||text.includes('cost')||text.includes('how much'))botReply('price');else if(text.includes('location')||text.includes('address')||text.includes('where'))botReply('location');else if(text.includes('charger')||text.includes('airpods')||text.includes('accessories')||text.includes('cover'))botReply('accessories');else if(text.includes('video')||text.includes('promo'))botReply('video');else if(text.includes('whatsapp')||text.includes('contact')||text.includes('call'))botReply('whatsapp');else botReply('default')}
+  </script>
+</body>
+</html>
